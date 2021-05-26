@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <script src="../Musicotheque&Bootstrap/js/jquery-3.4.1.min.js"></script>
+    <script src="../Musicotheque&Bootstrap/js/menu.js"></script>
+    <script src="js/functions.js" ></script>
+
+    <!-- CSS -->
+        <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- googleFonts -->
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@200;400;600&family=Sriracha&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/musicoTheque.css">
+    <link href='css/normalize.css' rel='stylesheet' type='text/css'>
+
+   <!-- <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-music-note-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z"/>
+        <path fill-rule="evenodd" d="M12 3v10h-1V3h1z"/>
+        <path d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1V2.82z"/>
+        <path fill-rule="evenodd" d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z"/>
+      </svg>-->
+        <title>MusicoFou !</title>
+    </head>
+
+    <body>
+        <header id="header">
+            <a href="#" id="logo"><img src="../CVtheque-PHP/images/me.jpeg" alt="" id="me"></a>
+            <h1>Lydie BOUVET</h1>
+            <nav id="headerNav">
+                <ul>
+                    <li><a href="../CVtheque-PHP/index.php">CvThèque</a></li>
+                    <li><a href="../Musicotheque&Bootstrap/index.html">Musico</a></li>
+                    <li><a href="../MiniJeuxJs/index.html">Les Jeux</a></li>
+                    <!-- <li><a href="#">A propos de moi</a></li> -->
+                </ul>
+            </nav>
+            <button id="menuToggle">
+                <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                </svg>
+            </button>
+        </header>        
+        <!-- Conteneur -->
+        <main id="main" class="container-fluid">
+            <h1>Let the music play !</h1>
+            <!--Boutons de contrôle-->
+            <header id="command" class="row text-white rounded " >
+                <section id="listen" class="col-lg-5 col-sm-12 col-xs-12 mx-auto my-3 ">
+                    <audio id="player" controls onended="suivant()" ontimeupdate="read()">
+                    </audio>
+
+                    <!-- LET'S PLAY MUSIC !-->
+                    <section id="play" class="row" >
+
+                        <!--Précédent-->
+                        <button type="button" class="col-2 mx-auto" id="btn-prev">
+                            <i class="fa fa-backward btn-lg"></i>
+                        </button>
+
+                        <!--Lecture-->
+                        <button type="button" class="col-2 mx-auto " id="btn-play" type="button">
+                            <i id="icon" class="fa fa-play btn-lg"></i>
+                        </button>
+
+                        <button type="button" class="col-2 mx-auto " id="btn-repeat" type="button">
+                            <i id="repeat" class="fa fa-repeat" aria-hidden="true"></i>
+                        </button>
+                        
+                        <!--Suivant-->
+                        <button type="button" class="col-2 mx-auto" id="btn-next">
+                             <i class="fa fa-forward btn-lg "></i>
+                        </button>
+                        
+                    </section>
+                    
+                    <!-- VOLUME -->
+                    <section id="vol" class="row" >
+                        <!--Volume Bas-->
+                        <button type="button" class="col-2 mx-auto " id="btn-volumeDown">
+                            <i class="fa fa-volume-down btn-lgs" aria-hidden="true"></i>
+                        </button>
+
+                        <!--Volume Curseur-->
+                        <div id="volRange" class="col-6 ">
+                            <form>
+                                <div class="form-group">
+                                    <input  id="volume" oninput="changeVolume()" type="range" value="1" max="1" step="0.1" class="form-control-range mt-3" style="width:100%" >
+                                </div>
+                            </form>
+                        </div>
+
+                        <!--Volume Haut-->
+                        <button type="button" class="col-2 mx-auto" id="btn-volumeUp">
+                            <i class="fa fa-volume-up btn-lg" aria-hidden="true"></i>
+                        </button>
+                        <!-- <button type="button" class="col-2 mx-auto" id="btn-mute">
+                            <i class="fas fa-volume-mute btn-lg" aria-hidden="true"></i>
+                        </button> -->
+
+                    </section>
+                </section>
+
+                    <!--Ecoute en cours-->
+                <section id="ecoute" class="col-lg-4 col-sm-5 col-xs-11 my-3 mx-auto">
+                        <!-- <p class="text-white ml-4">Nom de l'artiste</p> -->
+                        <p id="songTitle" class="text-white ml-3">Titre de la chanson</p>
+        
+                        <!--Situation dans la chanson => Curseur-->
+                        <div class="col-lg-10">
+                            <form>
+                                <div class="form-group">
+                                    <span id="progressTime" class="mr-5"></span> 
+                                    <span id="durationTime" class="ml-5"></span> 
+                                    <input type="range" id="progress" oninput="changeProgress()" type="range" max="" value="0" class="form-control-range mb-3" >
+                                </div>
+                            </form>
+                        </div>
+                </section>
+
+                    <!--Recherche-->
+                <section id="recherche" class="col-lg-3 col-sm-5 col-xs-11 mx-100 my-3">
+                    <nav class="navbar navbar-light bg-light w-100">
+                        <form class="form-inline w-100 mx-auto">
+                            <input class="form-control mx-auto rounded shadow w-75" type="search" placeholder="Recherche" aria-label="Search">
+                            <button class="btn border-white rounded-lg mx-auto" type="submit w-25">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search w-20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                                    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </nav>
+                </section>
+            </header>
+
+        
+            <!--Discothèque-->
+            <section id="body" class="row d-flex flex-wrap">
+                <!--Menu-->
+                <aside id="aside" class=" col-md-1 col-sm-4 col-xs-12 mt-3 ml-0 px-0 ">
+                    <nav id="asideNav">
+                        <ul class="nav flex-column text-center ">
+                            <li class="nav-item">
+                            <a class="nav-link active rounded border text-white" href="#">Music</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link rounded border-right border-left text-white" href="#">Vidéos</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link rounded border text-white" href="#">Podcasts</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </aside>
+
+                <!--Cards-->
+                <!-- ARBORESCENCE -->
+                <section id="cards_list" class="d-flex flex-wrap justify-content-center justify-content-sm-center justify-content-md-start col-md-10 col-sm-8 col-xs-12 mx-auto">
+
+                    <!-- Les Cartes sont créées ici -->
+
+                </section>
+            </section>
+        </main>
+        <footer id="footer">
+            © Lydie BOUVET - 2021
+        </footer>
+
+    </body>
+</html>
