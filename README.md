@@ -1,2 +1,2 @@
 # mediaPlayer
- A little music player in JavaScript Vanilla
+A little app for listen music made with JavaScript Vanilla & a little Bootstrap
