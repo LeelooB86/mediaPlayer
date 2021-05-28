@@ -18,8 +18,8 @@ var pockets = new Array();
 pockets.push("1 - Apparat.jpg");
 pockets.push("2 - Numb.jpg");
 pockets.push("3 - Dirge.jpg");
-pockets.push("4 - Innocence.jpg")
-pockets.push("5 - PourVoir.jpg")
+pockets.push("4 - Lullaby.jpg")
+pockets.push("5 - Innocence.jpg")
 
 
 var index = 0;
@@ -50,7 +50,6 @@ function init() {
     document.getElementById('btn-volumeDown').addEventListener('click', volumeDown, false);
     document.getElementById('btn-volumeUp').addEventListener('click', volumeUp, false);
     //document.getElementById('btn-mute').addEventListener('click', mute);
-
 
      for (var i = 0; i < musics.length; i++) {
 

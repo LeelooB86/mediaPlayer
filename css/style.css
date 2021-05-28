@@ -61,7 +61,7 @@ audio {
 li {
   list-style: none;
 }
-#headerNav a {
+#header a, #headerNav a {
   color: #8aaca1;
   letter-spacing: 5px;
   font-family: 'MuseoModerno', cursive;
@@ -71,9 +71,12 @@ li {
   transition: color .2s .2s;
 }
 
-#headerNav a:hover {
+#header a:hover, #headerNav a:hover {
   color: #f0806e;
   transition: color .2s;
+}
+#header a {
+  font-size: 0.7em;
 }
 
 /* ==== BOUTON MENU ==== */
@@ -160,7 +163,7 @@ button, .btn, .bi {
 /* ====== ECRAN 767 PX ====== */
 @media screen and (min-width: 767px) {
   #header {
-    grid-template-columns: 80px 175px 1fr;
+    grid-template-columns: 80px 230px 1fr;
     align-items: center;
   }
   #header > h1 {
